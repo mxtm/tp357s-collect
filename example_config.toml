@@ -1,0 +1,9 @@
+[device]
+address = "AA:BB:CC:DD:EE:FF"
+
+[database]
+host = "localhost"
+port = 8086
+username = "username"
+password = "password"
+name = "tp357s-collect"

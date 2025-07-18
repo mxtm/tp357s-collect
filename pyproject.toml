@@ -1,0 +1,21 @@
+[project]
+name = "tp357s-collect"
+version = "0.1.0"
+description = "Collects (and optionally stores) data from ThermoPro TP357s hygrometers via Bluetooth"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Max T-M", email = "max@mxtm.me" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "bleak==1.0.1",
+    "influxdb==5.3.2",
+]
+
+[project.scripts]
+tp357s-collect = "tp357s_collect.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
