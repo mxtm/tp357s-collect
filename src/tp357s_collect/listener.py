@@ -21,12 +21,12 @@ class Listener:
         device_address: str,
         stop_event: asyncio.Event,
         db_writer: DBWriter | None = None,
-    ):
+    ) -> None:
         self._device_address = device_address
         self._stop_event = stop_event
         self._db_writer = db_writer
 
-    async def listen(self):
+    async def listen(self) -> None:
         async with BleakClient(self._device_address) as client:
             await client.start_notify(CHARACTERISTIC_UUID, self.handle_notification)
             await self._stop_event.wait()
@@ -36,7 +36,7 @@ class Listener:
         self,
         sender: BleakGATTCharacteristic,
         data: bytearray,
-    ):
+    ) -> None:
         parsed_data = parse_raw_tp357s_gatt_data(data)
 
         temp_f = round(

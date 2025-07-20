@@ -13,7 +13,7 @@ class DBWriter:
         username: str,
         password: str,
         database: str,
-    ):
+    ) -> None:
         self._client = InfluxDBClient(
             host=host,
             port=port,
@@ -28,7 +28,7 @@ class DBWriter:
         temp_f: float,
         hum: int,
         heat_index: float,
-    ):
+    ) -> None:
         current_time = time.time_ns()
 
         formatted_data = [

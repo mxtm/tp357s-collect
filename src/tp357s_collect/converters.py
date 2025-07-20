@@ -1,7 +1,7 @@
-def convert_celsius_to_fahrenheit(temp_c: float):
+def convert_celsius_to_fahrenheit(temp_c: float) -> float:
     return temp_c * 1.8 + 32
 
-def get_heat_index(temp_f: float, hum: int):
+def get_heat_index(temp_f: float, hum: int) -> float:
     return (
         -42.379 +
         (2.04901523*temp_f) +
